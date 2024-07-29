@@ -1,8 +1,102 @@
-body {
-  background-color: antiquewhite;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+:root {
+  --main-color: #4edcec;
+  --main-darker: #32a3b0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 2px solid #f2f2f2;
+}
+.navbar h1 {
+  color: var(--main-color);
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: var(--main-color);
+}
+.content {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+#loginbutton {
+  background-color: var(--main-color);
+  border-radius: 8px;
+  color: white;
+  padding: 5px 15px;
+  margin-left: 200px auto;
+}
+
+#loginbutton:hover {
+  background-color: var(--main-darker);
+}
+
+.button {
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+.button:hover {
+  background-color: var(--main-darker);
+}
+
+.note-list {
+  width: 300px;
+  height: fit-content;
+  border-radius: 20px;
+}
+
+.note-list h3 {
+  height: 40px;
+  padding-top: 10px;
+  font-weight: 540;
+  text-align: left;
+}
+
+.note {
+  border-bottom: 0.5px solid #f2f2f2;
+  display: flex;
+}
+
+.note h4 {
+  padding: 10px 10px;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.note:hover {
+  box-shadow: 1px 2px 5px black;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  margin: auto;
+  cursor: pointer;
 }
