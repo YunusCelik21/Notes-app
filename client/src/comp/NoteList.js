@@ -10,9 +10,9 @@ const NoteList = (props) => { // or instead of (props) (and delete consts) --> (
             <h3>{title}</h3>
             {notes.map((note) => (
                 <div className="note" key={note.id}>
-                    <Link to={`/notes/${note.id}`} style={{ textDecoration: 'none' }}>
-                        <h4>{note.title + " - " + note.text + " - " + note.date}</h4>
-                        <span className="material-symbols-outlined" onClick={() => handleDelete(note.id)}>delete</span>
+                    <Link to={`/notes/${note.id}`}>
+                        <h3>{note.title}</h3>
+                        <h4>{note.date}</h4>
                     </Link>
                 </div>
             ))}
