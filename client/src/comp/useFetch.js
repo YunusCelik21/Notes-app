@@ -8,8 +8,10 @@ const useFetch = (link) => {
 
     // json fake database
     useEffect(() => {
-        console.log("changed the first note (probably deleted)");
-        fetch(link)
+        // abort the fetch when unmounted
+        const abort = new AbortController();
+
+        fetch(link, {signal: abort.signal})
             .then(res => {
                 if (!res.ok) {
                     throw Error("could not fetch the data for that resource");
@@ -22,10 +24,17 @@ const useFetch = (link) => {
                 setError(null);
             })
             .catch(err => {
-                console.log(err.message);
-                setError(err.message);
-                setIsLoading(false);
+                // do not update the state if aborted
+                if (err.name === "AbortError") {
+                    console.log("fetch aborted")
+                }
+                else {
+                    setError(err.message);
+                    setIsLoading(false);
+                }
             });
+
+        return () => abort.abort();
     }, [])
 
     return {data, isLoading, error};

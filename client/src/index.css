@@ -81,10 +81,11 @@
   display: flex;
 }
 
-.note h4 {
+.note h4{
   padding: 10px 10px;
-  text-decoration: none;
   font-weight: 400;
+  text-decoration: none;
+  border-bottom: none;
 }
 
 .note:hover {
@@ -97,6 +98,5 @@
   'wght' 400,
   'GRAD' 0,
   'opsz' 24;
-  margin: auto;
   cursor: pointer;
 }
