@@ -7,13 +7,23 @@ const NoteList = (props) => { // or instead of (props) (and delete consts) --> (
 
     return (
         <div className="note-list">
-            <h3>{title}</h3>
+            <div className="note-list-title">
+                <h3>{title}</h3>
+                <Link to={`/add`}>
+                    <span class="material-symbols-outlined">add</span>
+                    <div>Add</div>
+                </Link>
+            </div>
             {notes.map((note) => (
                 <div className="note" key={note.id}>
-                    <Link to={`/notes/${note.id}`}>
+                    <div className="note-top">
                         <h3>{note.title}</h3>
-                        <h4>{note.date}</h4>
-                    </Link>
+                        <Link to={`/notes/${note.id}`}>
+                            <span className="material-symbols-outlined">edit</span>
+                            <dev>Edit</dev>
+                        </Link>    
+                    </div>
+                    <h4>{note.date}</h4>
                 </div>
             ))}
         </div>

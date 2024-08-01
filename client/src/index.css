@@ -2,12 +2,14 @@
 :root {
   --main-color: #4edcec;
   --main-darker: #32a3b0;
+  --devsite-secondary-text-color: #5f6368;
+  --devsite-primary-text-color: #202124;
 }
 
 * {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #333;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--devsite-primary-text-color);
 }
 .navbar {
   padding: 20px;
@@ -65,38 +67,73 @@
 
 .note-list {
   width: 300px;
-  height: fit-content;
-  border-radius: 20px;
-}
-
-.note-list h3 {
-  height: 40px;
-  padding-top: 10px;
-  font-weight: 540;
-  text-align: left;
+  height: max-content;
+  position: relative;
 }
 
 .note {
-  border-bottom: 0.5px solid #f2f2f2;
-  display: flex;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .note h3{
-  color: var(--main-color);
+  color: var(--devsite-primary-text-color);
+  padding-top: 10px;
   padding-left: 10px;
+  height: fit-content;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
 }
 
 .note h4{
-  padding: 10px 10px;
+  color: var(--devsite-secondary-text-color);
+  padding: 20px 20px 10px;
   font-weight: 400;
   text-decoration: none;
 }
 
 .note a {
   text-decoration: none;
+  position: absolute;
+}
+.note a div {
+  color: var(--devsite-secondary-text-color);
 }
 .note:hover {
   box-shadow: 1px 2px 5px black;
+}
+
+.note-top {
+  display: flex;
+}
+
+.note-top a {
+  display: flex;
+  right: 0;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.note-list-title {
+  display: flex;
+  position: relative;
+  width: 350px;
+  margin-bottom: 10px;
+}
+
+.note-list-title a {
+  position: absolute;
+  right: 0;
+  top: 13px;
+  display: flex;
+  text-decoration: none;
+}
+
+.note-list-title h3 {
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .material-symbols-outlined {

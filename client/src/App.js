@@ -4,6 +4,7 @@ import Home from './comp/Home';
 import About from './comp/About';
 import Login from './comp/Login';
 import NoteDetails from './comp/NoteDetails';
+import NoteAdd from './comp/NoteAdd';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
               <Route exact path='/login' element={<Login/>}></Route>
               {/** :id means its a variable*/}
               <Route exact path='/notes/:id' element={<NoteDetails/>}></Route>
+              <Route excat path='/add' element={<NoteAdd/>}></Route>
             </Routes>
           </div>
         </div>
