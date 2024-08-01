@@ -110,29 +110,38 @@
 }
 
 .note-top a {
+  position: absolute;
   display: flex;
   right: 0;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.note-top a:hover {
+  box-shadow: 1px 2px 3px black;
 }
 
 .note-list-title {
   display: flex;
   position: relative;
   width: 350px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .note-list-title a {
   position: absolute;
-  right: 0;
-  top: 13px;
   display: flex;
+  right: 0;
+  padding: 5px;
   text-decoration: none;
 }
 
+.note-list-title a:hover {
+  box-shadow: 1px 2px 3px black;
+}
+
 .note-list-title h3 {
-  padding-top: 10px;
+  padding-top: 5px;
   padding-bottom: 20px;
 }
 
