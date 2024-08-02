@@ -1,0 +1,5 @@
+# dev
+/.foo
+
+# dependencies
+/node_modules
