@@ -10,7 +10,7 @@ const Home = () => {
             <div className="notes">
                 {error && <div>{error}</div>}
                 {isLoading && <div>Loading...</div>}
-                {notes && <NoteList notes={notes} title="All Notes" />}
+                {notes && <NoteList notes={notes} title="Notes" />}
                 {/*<NoteList notes={notes.filter((note) => note.date.substring(3,5) === "07")} title="July Notes"/>
                 <NoteList notes={notes.filter((note) => note.date.substring(3,5) === "01")} title="January Notes"/>*/}
             </div>
