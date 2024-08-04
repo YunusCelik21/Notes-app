@@ -7,6 +7,6 @@ router.route("/").get(db.getNotes);
 router.post("/", db.postNote);
 
 router.get("/:id", db.getNote);
-
+router.delete("/:id", db.deleteNote);
 
 module.exports = router;

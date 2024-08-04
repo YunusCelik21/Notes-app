@@ -42,9 +42,21 @@ const postNote = (req, res) => {
             console.error(err.message);
         }
         else {
-            res.status(201).send(req.body);
+            res.status(201).send("Note added successfully");
         }
     });
 }
 
-module.exports = {getNotes, getNote, postNote};
+const deleteNote = (req, res) => {
+    console.log("got the request");
+    pool.query(queries.deleteNote, [req.params.id], (err, result) => {
+        if (err) {
+            console.error(err.message);
+        }
+        else {
+            res.status(204).send();
+        }
+    });
+}
+
+module.exports = {getNotes, getNote, postNote, deleteNote};
