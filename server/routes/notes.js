@@ -1,14 +1,12 @@
 const express = require("express");
+const { getNote, getNotes } = require("../src/db");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.send("Notes");
-})
+router.get("/", getNotes);
 
-router.route("/:id").get((req, res) => {
-    res.send(`Get the note with id: ${req.params.id}`);
-}).post((req, res) => {
+router.route("/:id").get(getNote)
+.post((req, res) => {
     res.send(`Post a note with id: ${req.params.id}`);
 }).delete((req, res) => {
     res.send(`Delete the note with id: ${req.params.id}`);
