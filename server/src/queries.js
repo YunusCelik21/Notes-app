@@ -1,7 +1,6 @@
-const getNotesQuery = "SELECT * FROM notes";
+const getNotes = "SELECT * FROM notes";
+const getNote = "SELECT * FROM notes WHERE id = $1";
 
-const getNoteQuery = (req) => {
-    return `SELECT * FROM notes WHERE id = ${req.params.id}`;
-}
+const postNote = "INSERT INTO notes VALUES ($1, $2)";
 
-module.exports = {getNotesQuery, getNoteQuery};
+module.exports = {getNotes, getNote, postNote};
