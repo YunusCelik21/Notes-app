@@ -30,7 +30,10 @@ const NoteDetails = () => {
             {note &&    <>
                             <div className="note-details-top">
                                 <h2>{note[0].title}</h2>
-                                <div onClick={handleDelete}><Icon icon="delete" text="Delete" /></div>
+                                <div className="icons">
+                                    <div onClick={handleDelete} title="Delete the note"><Icon icon="delete" text="" /></div>
+                                    <div title="Edit the note"><Icon link="/edit" icon="edit" text=""/></div>
+                                </div>
                             </div>
                             <p>{note[0].text}</p>
                         </>
