@@ -34,6 +34,7 @@
 .navbar a:hover {
   color: var(--main-color);
 }
+
 .content {
   max-width: 800px;
   margin: 20px auto;
@@ -191,6 +192,51 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.not-found {
+  margin-top: 100px;
+  width: fit-content;
+}
+
+.not-found h2 {
+  font-size: 35px;
+  padding: 10px 0px;
+}
+
+.not-found h3 {
+  font-size: 25px;
+  padding: 0px 0px 20px 0px;
+  max-width: 400px;
+
+}
+
+.not-found h4 {
+  padding: 10px 0px 10px 0px;
+}
+
+.not-found li {
+  color: var(--devsite-secondary-text-color);
+  padding-top: 10px;
+}
+
+.not-found button {
+  font-size: 15px;
+  color: var(--devsite-secondary-text-color);
+  padding: 10px;
+  cursor: pointer;
+  border: 0;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.not-found button:hover {
+  padding: 12px;
+  margin: 0px;
+  background-color: #d7d7d7;
+  margin-top: 18px;
+  margin-left: 28px;
+}
+
 
 .material-symbols-outlined {
   font-variation-settings:

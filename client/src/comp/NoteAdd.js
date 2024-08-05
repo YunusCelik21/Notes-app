@@ -11,7 +11,7 @@ const NoteAdd = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const note = {title, text: body, date: "01-08-2024"};
+        const note = {title, text: body};
         setIsLoading(true);
         
         fetch("http://localhost:4000/notes", {
