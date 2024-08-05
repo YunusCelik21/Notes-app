@@ -14,7 +14,7 @@ const NoteAdd = () => {
         const note = {title, text: body, date: "01-08-2024"};
         setIsLoading(true);
         
-        fetch("http://localhost:8000/notes", {
+        fetch("http://localhost:4000/notes", {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(note)

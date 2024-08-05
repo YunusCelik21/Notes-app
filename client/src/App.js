@@ -19,7 +19,8 @@ const App = () => {
               <Route exact path='/login' element={<Login/>}></Route>
               {/** :id means its a variable*/}
               <Route exact path='/notes/:id' element={<NoteDetails/>}></Route>
-              <Route excat path='/add' element={<NoteAdd/>}></Route>
+              <Route exact path='/add' element={<NoteAdd/>}></Route>
+              <Route exact path='*' element={<NotFound/>}></Route>
             </Routes>
           </div>
         </div>

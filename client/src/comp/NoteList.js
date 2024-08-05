@@ -4,7 +4,6 @@ import Icon from "./Icon";
 const NoteList = (props) => { // or instead of (props) (and delete consts) --> ({notes, title, handleDelete})
     const notes = props.notes;
     const title = props.title;
-    const handleDelete = props.handleDelete;
 
     return (
         <div className="note-list">
@@ -18,7 +17,7 @@ const NoteList = (props) => { // or instead of (props) (and delete consts) --> (
                         <h3>{note.title}</h3>
                         <Icon link={`/notes/${note.id}`} icon="edit" text="Edit"/>
                     </div>
-                    <h4>{note.date}</h4>
+                    <h4>{note.postdate}</h4>
                 </div>
             ))}
         </div>
