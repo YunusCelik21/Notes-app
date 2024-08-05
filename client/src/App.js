@@ -5,6 +5,7 @@ import About from './comp/About';
 import Login from './comp/Login';
 import NoteDetails from './comp/NoteDetails';
 import NoteAdd from './comp/NoteAdd';
+import NotFound from './comp/NotFound';
 
 const App = () => {
   return (
