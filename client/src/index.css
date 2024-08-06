@@ -178,22 +178,24 @@
   border-bottom: 1px solid #f2f2f2;
 }
 
+.note-details-top h2 {
+  margin: auto 0px;
+}
+
 .note-details .icons {
-  position: absolute;
+  margin-right: 0;
+  margin-left: auto;
   display: flex;
-  right: 0;
-  padding: 5px;
-  text-decoration: none;
 }
 
 .note-details span {
   margin-left: 25px;
   border-radius: 100%;
-  padding: 4px;
+  padding: 10px;
 }
 
 .note-details span:hover {
-  background-color:#d7d7d7;
+  background-color:#efefef;
 }
 
 .note-details p {
