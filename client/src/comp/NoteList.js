@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "./Icon";
+import DateConverter from "./DateConverter";
 
 const NoteList = (props) => { // or instead of (props) (and delete consts) --> ({notes, title, handleDelete})
     const notes = props.notes;
@@ -17,7 +18,7 @@ const NoteList = (props) => { // or instead of (props) (and delete consts) --> (
                         <h3>{note.title}</h3>
                         <Link to={`/notes/${note.id}`}><Icon icon="chevron_left" text="Details"/></Link>
                     </div>
-                    <h4>{note.postdate.substring(0,10)}</h4>
+                    <h4>{DateConverter(note.postdate)}</h4>
                 </div>
             ))}
             {notes.length == 0 && <>You don't have any notes yet! Click on the add button to add some notes.</>}
