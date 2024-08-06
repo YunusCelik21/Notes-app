@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import Icon from "./Icon";
 
 const NoteList = (props) => { // or instead of (props) (and delete consts) --> ({notes, title, handleDelete})
@@ -9,13 +9,13 @@ const NoteList = (props) => { // or instead of (props) (and delete consts) --> (
         <div className="note-list">
             <div className="note-list-title">
                 <h3>{title}</h3>
-                <Icon link="/add" icon="add" text="Add"/>
+                <Link to="/add"><Icon icon="add" text="Add"/></Link>
             </div>
             {notes.map((note) => (
                 <div className="note" key={note.id}>
                     <div className="note-top">
                         <h3>{note.title}</h3>
-                        <Icon link={`/notes/${note.id}`} icon="chevron_left" text="Details"/>
+                        <Link to={`/notes/${note.id}`}><Icon icon="chevron_left" text="Details"/></Link>
                     </div>
                     <h4>{note.postdate.substring(0,10)}</h4>
                 </div>

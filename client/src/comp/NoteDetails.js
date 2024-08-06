@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 import Icon from "./Icon";
 
@@ -22,6 +22,10 @@ const NoteDetails = () => {
         navigate("/not-found");
     }
 
+    const handleEdit = () => {
+
+    }
+
     return (
         <div className="note-details">
             {isLoading && <h4>Loading...</h4>}
@@ -32,7 +36,7 @@ const NoteDetails = () => {
                                 <h2>{note[0].title}</h2>
                                 <div className="icons">
                                     <div onClick={handleDelete} title="Delete the note"><Icon icon="delete" text="" /></div>
-                                    <div title="Edit the note"><Icon link="/edit" icon="edit" text=""/></div>
+                                    <Link to={`/notes/${id}/edit`} title="Edit the note"><Icon icon="edit" text=""/></Link>
                                 </div>
                             </div>
                             <p>{note[0].text}</p>
