@@ -16,7 +16,7 @@ const NoteAdd = () => {
         
         fetch("http://localhost:4000/notes", {
             method: 'POST',
-            headers: {"Content-Type": "application/json"},
+            headers: {"Content-type": "application/json; charset=UTF-8"},
             body: JSON.stringify(note)
         })
             .then(() => {

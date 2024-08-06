@@ -125,26 +125,30 @@
   box-shadow: 1px 2px 3px black;
 }
 
+.note-list-title .icon-text {
+  color: var(--devsite-secondary-text-color);
+}
+
 .note-list-title h3 {
   padding-top: 5px;
   padding-bottom: 20px;
 }
 
-.note-add {
+.note-add, .note-edit {
   max-width: 400px;
   margin: auto;
   text-align: center;
 }
-.note-add label {
+.note-add label, .note-edit label {
   text-align: left;
   display: block;
 }
-.note-add h2 {
+.note-add h2, .note-edit h2 {
   font-size: 20px;
   color: var(--devsite-primary-text-color);
   margin-bottom: 30px;
 }
-.note-add input, .note-add textarea{
+.note-add input, .note-add textarea, .note-edit input, .note-edit textarea {
   width: 60%;
   padding: 6px 10px;
   margin: 10px 0px 30px 10px;
@@ -153,13 +157,13 @@
   display: block;
 }
 
-.note-add textarea {
+.note-add textarea, .note-edit textarea {
   width: 100%;
   height: 200px;
   resize: none;
 }
 
-.note-add button {
+.note-add button, .note-edit button {
   color: var(--devsite-secondary-text-color);
   padding: 10px;
   cursor: pointer;
@@ -167,7 +171,7 @@
   border: 0;
 }
 
-.note-add button:hover {
+.note-add button:hover, .note-edit button:hover {
   padding: 12px;
   margin: 0px;
   background-color: #d7d7d7;
