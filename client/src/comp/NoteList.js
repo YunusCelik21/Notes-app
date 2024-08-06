@@ -1,26 +1,27 @@
-
+import { Link } from "react-router-dom";
 import Icon from "./Icon";
+import DateConverter from "./DateConverter";
 
 const NoteList = (props) => { // or instead of (props) (and delete consts) --> ({notes, title, handleDelete})
     const notes = props.notes;
     const title = props.title;
-    const handleDelete = props.handleDelete;
 
     return (
         <div className="note-list">
             <div className="note-list-title">
                 <h3>{title}</h3>
-                <Icon link="/add" icon="add" text="Add"/>
+                <Link to="/add"><Icon icon="add" text="Add"/></Link>
             </div>
             {notes.map((note) => (
                 <div className="note" key={note.id}>
                     <div className="note-top">
                         <h3>{note.title}</h3>
-                        <Icon link={`/notes/${note.id}`} icon="edit" text="Edit"/>
+                        <Link to={`/notes/${note.id}`}><Icon icon="chevron_left" text="Details"/></Link>
                     </div>
-                    <h4>{note.date}</h4>
+                    <h4>{DateConverter(note.postdate)}</h4>
                 </div>
             ))}
+            {notes.length == 0 && <>You don't have any notes yet! Click on the add button to add some notes.</>}
         </div>
     );
 }

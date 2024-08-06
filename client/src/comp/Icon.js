@@ -1,20 +1,10 @@
 import { Link } from "react-router-dom";
 
-const Icon = ({link, icon, text}) => {
+const Icon = ({icon, text}) => {
     return (
         <div className="icon">
-            <div>
-                {link && <Link to={link}>
-                <span className="material-symbols-outlined">{icon}</span>
-                <dev>{text}</dev>
-                </Link> }
-            </div>
-            <div>
-                {!link && <div className="standart-icon">
-                <span className="material-symbols-outlined">{icon}</span>
-                <dev>{text}</dev>
-                </div> }
-            </div>
+            <span className="material-symbols-outlined">{icon}</span>
+            <div className="icon-text">{text}</div>
         </div>
     );
 }

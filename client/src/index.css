@@ -34,6 +34,7 @@
 .navbar a:hover {
   color: var(--main-color);
 }
+
 .content {
   max-width: 800px;
   margin: 20px auto;
@@ -83,18 +84,21 @@
 
 .note-top {
   display: flex;
-
 }
 
 .note-top a {
   position: absolute;
+  right: 0;
+}
+
+.note-top .icon {
   display: flex;
   right: 0;
   padding: 5px;
   margin: 5px;
 }
 
-.note-top a:hover {
+.note-top .icon:hover {
   box-shadow: 1px 2px 3px black;
 }
 
@@ -109,12 +113,20 @@
   position: absolute;
   display: flex;
   right: 0;
-  padding: 5px;
   text-decoration: none;
 }
 
-.note-list-title a:hover {
+.note-list-title .icon {
+  display: flex;
+  padding: 5px;
+}
+
+.note-list-title .icon:hover {
   box-shadow: 1px 2px 3px black;
+}
+
+.note-list-title .icon-text {
+  color: var(--devsite-secondary-text-color);
 }
 
 .note-list-title h3 {
@@ -122,21 +134,21 @@
   padding-bottom: 20px;
 }
 
-.note-add {
+.note-add, .note-edit {
   max-width: 400px;
   margin: auto;
   text-align: center;
 }
-.note-add label {
+.note-add label, .note-edit label {
   text-align: left;
   display: block;
 }
-.note-add h2 {
+.note-add h2, .note-edit h2 {
   font-size: 20px;
   color: var(--devsite-primary-text-color);
   margin-bottom: 30px;
 }
-.note-add input, .note-add textarea{
+.note-add input, .note-add textarea, .note-edit input, .note-edit textarea {
   width: 60%;
   padding: 6px 10px;
   margin: 10px 0px 30px 10px;
@@ -145,13 +157,13 @@
   display: block;
 }
 
-.note-add textarea {
+.note-add textarea, .note-edit textarea {
   width: 100%;
   height: 200px;
   resize: none;
 }
 
-.note-add button {
+.note-add button, .note-edit button {
   color: var(--devsite-secondary-text-color);
   padding: 10px;
   cursor: pointer;
@@ -159,7 +171,7 @@
   border: 0;
 }
 
-.note-add button:hover {
+.note-add button:hover, .note-edit button:hover {
   padding: 12px;
   margin: 0px;
   background-color: #d7d7d7;
@@ -177,13 +189,24 @@
   border-bottom: 1px solid #f2f2f2;
 }
 
-.note-details .standart-icon {
-  position: absolute;
+.note-details-top h2 {
+  margin: auto 0px;
+}
+
+.note-details .icons {
+  margin-right: 0;
+  margin-left: auto;
   display: flex;
-  right: 0;
-  padding: 5px;
-  text-decoration: none;
-  cursor: pointer;
+}
+
+.note-details span {
+  margin-left: 25px;
+  border-radius: 100%;
+  padding: 10px;
+}
+
+.note-details span:hover {
+  background-color:#efefef;
 }
 
 .note-details p {
@@ -191,6 +214,51 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.not-found {
+  margin-top: 80px;
+  width: fit-content;
+}
+
+.not-found h2 {
+  font-size: 35px;
+  padding: 10px 0px;
+}
+
+.not-found h3 {
+  font-size: 25px;
+  padding: 0px 0px 20px 0px;
+  max-width: 400px;
+
+}
+
+.not-found h4 {
+  padding: 10px 0px 10px 0px;
+}
+
+.not-found li {
+  color: var(--devsite-secondary-text-color);
+  padding-top: 10px;
+}
+
+.not-found button {
+  font-size: 15px;
+  color: var(--devsite-secondary-text-color);
+  padding: 10px;
+  cursor: pointer;
+  border: 0;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.not-found button:hover {
+  padding: 12px;
+  margin: 0px;
+  background-color: #d7d7d7;
+  margin-top: 18px;
+  margin-left: 28px;
+}
+
 
 .material-symbols-outlined {
   font-variation-settings:

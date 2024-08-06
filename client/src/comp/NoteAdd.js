@@ -11,12 +11,12 @@ const NoteAdd = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const note = {title, text: body, date: "01-08-2024"};
+        const note = {title, text: body};
         setIsLoading(true);
         
-        fetch("http://localhost:8000/notes", {
+        fetch("http://localhost:4000/notes", {
             method: 'POST',
-            headers: {"Content-Type": "application/json"},
+            headers: {"Content-type": "application/json; charset=UTF-8"},
             body: JSON.stringify(note)
         })
             .then(() => {
