@@ -5,8 +5,10 @@ app.use(express.json());
 
 app.use(function (req, res, next) {
     
+    const WEBSITE_URL = process.env.WEBSITE_URL;
+
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', WEBSITE_URL);
     
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
