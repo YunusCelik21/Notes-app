@@ -1,12 +1,10 @@
 const { Pool } = require("pg");
 const queries = require("./queries");
 
+const DATABASE_URL = process.env.DATABASE_URL;
+
 const pool = new Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "postgres",
-    password: "249568",
-    port: 5432,
+    connectionString: DATABASE_URL
 });
 
 function createTable() {
