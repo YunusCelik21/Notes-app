@@ -4,9 +4,38 @@ const queries = require("./queries");
 const pool = new Pool({
     user: "postgres",
     host: "localhost",
-    database: "notes_app",
+    database: "postgres",
     password: "249568",
     port: 5432,
+});
+
+function createTable() {
+    pool.query(queries.createTable, (err) => {
+        if (err) {
+            console.error(err);
+        }
+    });
+}
+
+// Coonect to the database and check if the table exists
+pool.connect((err) => {
+    
+    if (err) {
+        console.error(err);
+    }
+    else {
+        pool.query(`SELECT * FROM ${queries.table}`, (err) => {
+            if (err) {
+                if (err.message === `relation "${queries.table}" does not exist`) {
+                    console.log("Relation does not exist. creating the table...");
+                    createTable();
+                }
+            }
+            else {
+                console.log("Connection successful")
+            }
+        });
+    }
 });
 
 const noteExists = async (id) => {
@@ -41,7 +70,7 @@ const getNote = (req, res) => {
 const postNote = (req, res) => {
     const {title, text} = req.body;
 
-    pool.query(queries.postNote, [title, text], (err, result) => {
+    pool.query(queries.postNote, [title, text], (err) => {
 
         if (err) {
             console.error(err);
@@ -55,7 +84,7 @@ const postNote = (req, res) => {
 const deleteNote = (req, res) => {
     const id = req.params.id;
 
-    pool.query(queries.deleteNote, [id], (err, result) => {
+    pool.query(queries.deleteNote, [id], (err) => {
         if (err) {
             console.error(err);
         }
@@ -70,7 +99,7 @@ const updateNote = (req, res) => {
     const id = parseInt(req.params.id);
     const {title, text} = req.body;
 
-    pool.query(queries.updateNote, [title, text, id], (err, result) => {
+    pool.query(queries.updateNote, [title, text, id], (err) => {
         if (err) {
             console.error(err);
         }
