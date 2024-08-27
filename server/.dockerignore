@@ -1,0 +1,10 @@
+# dev
+.foo
+
+# dependencies
+node_modules
+
+# docker and git
+Dockerfile
+.dockerignore
+.gitignore
