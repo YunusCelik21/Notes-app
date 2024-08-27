@@ -5,7 +5,7 @@ FROM node:22-alpine3.19
 WORKDIR /usr/src/app
 
 # Production mode
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # Copy the package files earlier to prevent invalidating the cache in COPY instructions 
 COPY package*.json .
@@ -18,9 +18,10 @@ RUN npm ci --only=production
 USER node
 
 # chown flag to change the owner of the files
-COPY --chown=node:node ./src ./src
- 
-COPY --chown=node:node ./routes ./routes
+COPY --chown=node:node . .
 
-# Inform the user to expose which port, doesn't actually exposes  
+# Documentation for the end user , doesn't actually expose
 EXPOSE 4000
+
+# Run the server as defualt command
+CMD ["npm", "start"]
