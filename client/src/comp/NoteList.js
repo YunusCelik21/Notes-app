@@ -21,7 +21,7 @@ const NoteList = (props) => { // or instead of (props) (and delete consts) --> (
                     <h4>{DateConverter(note.postdate)}</h4>
                 </div>
             ))}
-            {notes.length == 0 && <>You don't have any notes yet! Click on the add button to add some notes.</>}
+            {notes.length === 0 && <>You don't have any notes yet! Click on the add button to add some notes.</>}
         </div>
     );
 }

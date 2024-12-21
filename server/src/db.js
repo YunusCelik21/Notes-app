@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 const queries = require("./queries");
 
-const DATABASE_URL = process.env.DATABASE_URL;
+const DATABASE_URL = process.env.DATABASE_URL || "postgres://postgres:249568@localhost:5432/postgres";
 
 const pool = new Pool({
     connectionString: DATABASE_URL
@@ -20,6 +20,7 @@ pool.connect((err) => {
     
     if (err) {
         console.error(err);
+        console.log("Cannot connect to " + DATABASE_URL);
     }
     else {
         pool.query(`SELECT * FROM ${queries.table}`, (err) => {

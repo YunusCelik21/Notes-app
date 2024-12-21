@@ -21,11 +21,7 @@ const NoteDetails = () => {
     if (error && error.message === "could not fetch the data for that resource") {
         navigate("/not-found");
     }
-
-    const handleEdit = () => {
-
-    }
-
+    
     return (
         <div className="note-details">
             {isLoading && <h4>Loading...</h4>}
