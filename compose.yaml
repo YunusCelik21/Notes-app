@@ -1,0 +1,49 @@
+services:
+  database:
+    image: postgres:16-alpine3.20
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=249568
+    container_name: "postgres"
+    networks:
+      - backend
+    ports: 
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+  server:
+    build: server/
+    environment: 
+      - WEBSITE_URL=http://localhost:3000
+      - DATABASE_URL=postgres://postgres:249568@database:5432/postgres
+    container_name: "server"
+    networks:
+      - backend
+      - frontend
+    ports:
+      - "4000:4000"
+    depends_on:
+      - database
+    restart: always
+
+  client:
+    build: client/
+    container_name: "client"
+    networks:
+      - frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    restart: always
+
+volumes:
+  pgdata:
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
