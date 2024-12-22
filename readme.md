@@ -4,14 +4,17 @@
 
 1. [Description](#description)
 2. [Screenshots](#screenshots)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Contributing](#contributing)
-6. [Contact](#contact)
+3. [Architecture](#architecture)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [Contact](#contact)
 
 ## Description
 
 This project is a containerized web application designed to show how a web application can be containerized using Docker. The app is built using React for the frontend, Express.js for the backend, and PostgreSQL as the database, all orchestrated using Docker Compose.
+
+If you're new to Docker and want to learn how to containerize an application, this repository serves as a helpful guide.
 
 ## Screenshots
 
@@ -19,9 +22,17 @@ This project is a containerized web application designed to show how a web appli
 
 ![edit](images/edit.png)
 
+## Architecture
+
+- **Frontend Container:** React app served on port 3000.
+  
+- **Backend Container:** Express.js server on port 4000.
+  
+- **Database Container:** PostgreSQL instance on port 5432.
+
 ## Installation
 
-1. You need to have Docker installed on your system. If you don't, you can install the latest version from [here](https://www.docker.com/get-started/).
+1. You need to have Docker installed on your system. If you don't, you can install the latest version from [Docker's official website](https://www.docker.com/get-started).
 
 2. Clone the repository:
 
