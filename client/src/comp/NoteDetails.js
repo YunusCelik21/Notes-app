@@ -3,14 +3,15 @@ import useFetch from "./useFetch";
 import Icon from "./Icon";
 
 const NoteDetails = () => {
+    const API_URL = process.env.API_URL || "http://localhost:4000";
     const {id} = useParams();
-    const {data: note, isLoading, error} = useFetch("http://localhost:4000/notes/" + id);
+    const {data: note, isLoading, error} = useFetch(API_URL + "/notes/" + id);
     
     const navigate = useNavigate();
 
     const handleDelete = () => {
         console.log("handle delete called");
-        fetch("http://localhost:4000/notes/" + id, {
+        fetch(API_URL + "/notes/" + id, {
             method: "DELETE"
         })
             .then(() => {

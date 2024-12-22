@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const NoteAdd = () => {
+    const API_URL = process.env.API_URL || "http://localhost:4000";
 
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
@@ -14,7 +15,7 @@ const NoteAdd = () => {
         const note = {title, text: body};
         setIsLoading(true);
         
-        fetch("http://localhost:4000/notes", {
+        fetch(API_URL + "/notes", {
             method: 'POST',
             headers: {"Content-type": "application/json; charset=UTF-8"},
             body: JSON.stringify(note)

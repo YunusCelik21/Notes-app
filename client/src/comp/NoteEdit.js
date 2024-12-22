@@ -3,8 +3,9 @@ import useFetch from "./useFetch";
 import { useNavigate, useParams } from "react-router-dom";
 
 const NoteEdit = () => {
+    const API_URL = process.env.API_URL || "http://localhost:4000";
     const {id} = useParams();
-    const {data: note, error} = useFetch("http://localhost:4000/notes/" + id);
+    const {data: note, error} = useFetch(API_URL + "/notes/" + id);
 
     const [title, setTitle] = useState("Loading...");
     const [body, setBody] = useState("Loading...");
@@ -28,7 +29,7 @@ const NoteEdit = () => {
         const note = {title, text: body};
         setIsLoading(true);
 
-        fetch("http://localhost:4000/notes/" + id, {
+        fetch(API_URL + "/notes/" + id, {
             method: "PUT",
             body: JSON.stringify(note),
             headers: {

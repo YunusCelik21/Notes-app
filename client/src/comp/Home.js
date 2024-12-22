@@ -2,8 +2,9 @@ import useFetch from "./useFetch";
 import NoteList from "./NoteList";
 
 const Home = () => {
+    const API_URL = process.env.API_URL || "http://localhost:4000";
 
-    const {data: notes, isLoading, error} = useFetch("http://localhost:4000/notes");
+    const {data: notes, isLoading, error} = useFetch(API_URL + "/notes");
 
     return (
         <div className="home">
