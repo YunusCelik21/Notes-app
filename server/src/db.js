@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 const queries = require("./queries");
 
-const DATABASE_URL = process.env.DATABASE_URL || "postgres://postgres:249568@localhost:5432/postgres";
+const DATABASE_URL = process.env.DATABASE_URL || "postgres://postgres:249568@database:5432/postgres";
 
 const pool = new Pool({
     connectionString: DATABASE_URL

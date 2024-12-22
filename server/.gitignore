@@ -1,5 +1,5 @@
 # dev
-/.foo
+.foo
 
 # dependencies
-/node_modules
+node_modules/

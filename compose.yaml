@@ -1,9 +1,9 @@
 services:
   database:
-    image: postgres:16-alpine3.20
+    image: postgres:14.15-alpine3.21
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=249568
+      - POSTGRES_PASSWORD=secretpassword
     container_name: "postgres"
     networks:
       - backend
@@ -12,12 +12,19 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     restart: always
+    # healthcheck to make sure database is ready
+    healthcheck: 
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
 
   server:
     build: server/
     environment: 
       - WEBSITE_URL=http://localhost:3000
-      - DATABASE_URL=postgres://postgres:249568@database:5432/postgres
+      - DATABASE_URL=postgres://postgres:secretpassword@database:5432/postgres
     container_name: "server"
     networks:
       - backend
@@ -25,11 +32,16 @@ services:
     ports:
       - "4000:4000"
     depends_on:
-      - database
+      database:
+        condition: service_healthy
+        restart: true
+
     restart: always
 
   client:
     build: client/
+    environment:
+      - API_URL=http://localhost:4000
     container_name: "client"
     networks:
       - frontend
