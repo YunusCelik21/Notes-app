@@ -86,3 +86,5 @@ git checkout -b feature-name
 ## Contact
 
 Email: 21yunuscelik21@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/yunus-%C3%A7elik-b24447247/
