@@ -27,6 +27,8 @@ This project is a containerized web application designed to show how a web appli
 
 ```
 git clone https://github.com/YunusCelik21/Notes-app.git
+```
+```
 cd Notes-app
 ```
 
@@ -42,7 +44,7 @@ or
 docker compose up -d
 ```
 
-If you want to run containers in the background.
+If you want to run the containers in the background.
 
 ## Usage
 
