@@ -15,6 +15,10 @@ This project is a containerized web application designed to show how a web appli
 
 ## Screenshots
 
+![homepage](images/home.png)
+
+![edit](images/edit.png)
+
 ## Installation
 
 1. You need to have Docker installed on your system. If you don't, you can install the latest version from [here](https://www.docker.com/get-started/).
